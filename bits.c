@@ -241,7 +241,9 @@ int allOddBits(int x) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+    //returns the ones complement of the number, the negative number and adds 1 because ones complement
+    //always subtracts 1
+  return ~x + 1;
 }
 //3
 /* 
