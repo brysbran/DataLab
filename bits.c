@@ -196,9 +196,8 @@ int bitXor(int x, int y)
  *   Rating: 1
  */
 int tmin(void) {
-    int a = 0x8;
-    printf("%d\n", a<<8);
-    return 0;
+    int num = (1 << 31);
+    return num;
 }
 //2
 /*
