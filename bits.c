@@ -218,9 +218,7 @@ int isTmax(int x) {
     So then because all non-zero ints will return 0 using ! in c,
     we do (x + !(x + 1) to eliminate that as well.
     */
-    int y = !(~( x + !(x + 1) ^ (x + 1)));
-    printf("%d\n ", y);
-    return 0;
+    return !(~( x + !(x + 1) ^ (x + 1)));
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
