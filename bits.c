@@ -196,8 +196,10 @@ int bitXor(int x, int y)
  *   Rating: 1
  */
 int tmin(void) {
-    int num = (1 << 31);
-    return num;
+    /*
+     * shifts 1 31 times to the left to get the minimum 2's complement integer
+     */
+    return (1<<31);
 }
 //2
 /*
