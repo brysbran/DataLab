@@ -209,12 +209,14 @@ int tmin(void) {
  *   Rating: 1
  */
 int isTmax(int x) {
-    //0x7FFFFFFF(2147483647) is the only thing that should make this return 1
-    //so by adding 1 we essentially flip this to -2147483647.
-    //Then by using the XOR operator and the bitwise and logical NOT
-    //this should flip all bits to 0.
-    //So then because all non zero ints will return 0 using ! in c,
-    //we do (x + !(x + 1) to eliminate that as well.
+    /*
+    0x7FFFFFFF(2147483647) is the only thing that should make this return 1
+    so by adding 1 we essentially flip this to -2147483647.
+    Then by using the XOR operator and the bitwise and logical NOT
+    this should flip all bits to 0.
+    So then because all non-zero ints will return 0 using ! in c,
+    we do (x + !(x + 1) to eliminate that as well.
+    */
     int y = !(~( x + !(x + 1) ^ (x + 1)));
     printf("%d\n ", y);
     return 0;
