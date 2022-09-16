@@ -229,7 +229,17 @@ int isTmax(int x) {
  *   Rating: 2
  */
 int allOddBits(int x) {
-  return 2;
+    //1010101010101010101010101010101
+    int num1 = 0x55 << 24;
+    int num2 = 0x55 << 16;
+    int num3 = 0x55 << 8;
+    int temp = num1 + num2 + num3 + 0x55;
+    //then the comparison
+    //takes the num in temp (which is all odd nums) and ors that with the given number,
+    //flips it with bitwise not, and then giving the ! of that answer.
+    return !(~(x | temp));
+    //referenced from chegg
+
 }
 /* 
  * negate - return -x 
@@ -254,6 +264,7 @@ int negate(int x) {
  *   Rating: 3
  */
 int isAsciiDigit(int x) {
+    
   return 2;
 }
 /* 
@@ -264,7 +275,9 @@ int isAsciiDigit(int x) {
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
-  return 2;
+    x = !!x; //puts x in 0 or 1 form
+    x = ~x+1; //x is now either all 1's or all 0's
+    return (x & y) | (~x & z);
 }
 /* 
  * isLessOrEqual - if x <= y  then return 1, else return 0 
